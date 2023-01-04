@@ -1,15 +1,15 @@
 package io.github.danielkhalils.parkingcontrol.models;
 
 import jakarta.persistence.*;
-
 import java.io.Serializable;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "RB_PARKING_SPOT")
+@Table(name = "TB_PARKING_SPOT")
 public class ParkingSpotModel implements Serializable {
-    private static final long serializableUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,7 +25,7 @@ public class ParkingSpotModel implements Serializable {
     @Column(nullable = false, length = 70)
     private String colorCar;
     @Column(nullable = false)
-    private LocalDateTime registrationDate;
+    private LocalDateTime registrationData;
     @Column(nullable = false, length = 130)
     private String responsibleName;
     @Column(nullable = false, length = 30)
@@ -81,12 +81,12 @@ public class ParkingSpotModel implements Serializable {
         this.colorCar = colorCar;
     }
 
-    public LocalDateTime getRegistrationDate() {
-        return registrationDate;
+    public LocalDateTime getRegistrationData() {
+        return registrationData;
     }
 
-    public void setRegistrationDate(LocalDateTime registrationDate) {
-        this.registrationDate = registrationDate;
+    public void setRegistrationData(LocalDateTime registrationData) {
+        this.registrationData = registrationData;
     }
 
     public String getResponsibleName() {
